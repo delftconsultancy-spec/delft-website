@@ -1,0 +1,286 @@
+/* ==============================
+   NEW COLOR PALETTE (Matched to Logo)
+   ============================== */
+:root {
+    /* Main Gradient Colors */
+    --deep-blue: #2a3a8b;      /* Top/Left of logo gradient */
+    --vibrant-purple: #9a66d0; /* Bottom/Right of logo gradient */
+    
+    /* Text and accents */
+    --logo-white: #ffffff;    /* Primary text in logo */
+    --logo-white-alt: #f1f1f1; /* Subtext/Accent white */
+    
+    /* Global/Structure */
+    --text-dark: #222222;     /* Dark body text for readability */
+    --bg-light: #fefefe;      /* Clean background */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ==============================
+   HEADER & NAVIGATION
+   ============================== */
+header {
+    background: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo container and alignment */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between image and text */
+}
+
+.logo-img {
+    height: 65px; /* Adjust height for balance */
+    width: auto;
+    display: block;
+}
+
+/* NEW: GRADIENT HEADER TEXT */
+.logo-text {
+    font-weight: 800;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    
+    /* Apply gradient text effect */
+    background: linear-gradient(135deg, var(--deep-blue) 0%, var(--vibrant-purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--deep-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--vibrant-purple);
+}
+
+/* ==============================
+   HERO / MAIN BANNER (Gradient Match)
+   ============================== */
+.hero {
+    /* Apply the exact logo gradient colors to the background */
+    background: linear-gradient(135deg, var(--deep-blue) 0%, var(--vibrant-purple) 100%);
+    color: var(--logo-white);
+    padding: 120px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    max-width: 850px;
+    margin: 0 auto 25px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+    color: var(--logo-white-alt);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--logo-white);
+    color: var(--deep-blue); /* High contrast */
+    padding: 16px 38px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* ==============================
+   SECTION STYLING
+   ============================== */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    color: var(--deep-blue);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+/* Purpose (Mission/Vision) Cards */
+.mission-vision {
+    padding: 90px 0;
+    background: #fbfbfb; /* Very subtle light bg */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background: var(--logo-white);
+    padding: 50px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    /* subtle gradient accent on top */
+    border-top: 5px solid;
+    border-image: linear-gradient(135deg, var(--deep-blue) 0%, var(--vibrant-purple) 100%) 1;
+}
+
+.icon {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+}
+
+/* Specializations */
+.services-section {
+    padding: 90px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.service-item {
+    border: 1px solid #e0e0e0;
+    padding: 30px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    background-color: var(--logo-white);
+}
+
+.service-item:hover {
+    border-color: var(--vibrant-purple);
+    background-color: #f6f0ff; /* Purple hint on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+}
+
+.service-item h4 {
+    color: var(--deep-blue);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* Core Values Banner */
+.values-banner {
+    background: linear-gradient(135deg, var(--deep-blue) 0%, var(--vibrant-purple) 100%);
+    color: var(--logo-white);
+    padding: 70px 0;
+    text-align: center;
+}
+
+.values-banner blockquote {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 300;
+    border: none;
+    margin: 0;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 90px 0;
+    text-align: center;
+}
+
+.contact-info {
+    margin-top: 35px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--deep-blue);
+}
+
+/* Footer (Match deep-blue tone) */
+footer {
+    background: #191c2c; /* Deep, muted blue/black */
+    color: rgba(255,255,255,0.7);
+    padding: 50px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer .logo-img {
+    max-height: 50px;
+    margin: 0 auto 20px auto;
+    opacity: 0.8;
+}
+
+/* ==============================
+   RESPONSIVE (Mobile)
+   ============================== */
+@media (max-width: 992px) {
+    .hero h1 { font-size: 2.2rem; }
+    .logo-text { font-size: 1.3rem; }
+}
+
+@media (max-width: 768px) {
+    .logo-text { display: none; } /* Hide text on mobile, just keep logo-img */
+    nav ul { display: none; } /* Standard: add mobile menu logic here */
+    .hero h1 { font-size: 1.8rem; }
+    .hero p { font-size: 1rem; }
+    .btn { padding: 14px 30px; }
+}
